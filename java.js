@@ -1,28 +1,28 @@
+
 document.getElementById('addItem').addEventListener('click', function() {
     const itemInput = document.getElementById('item-input');
     const itemValue = itemInput.value.trim();
 
-    if(itemValue){
-        addItem(itemValue);
+    if (itemValue) {
+        addItem(itemValue, 'groceryList');
         itemInput.value = '';
     }
-})
+});
 
-function addItem(item) {
-    const list = document.getElementById('grocery-list')
+function addItem(item, listId) {
+    const list = document.getElementById(listId);
     const listItem = document.createElement('li');
     listItem.textContent = item;
-    
-    const removeItem = document.createElement('button')
-    removeItem.innerHTML = '<ion-icon name="close-outline"></ion-icon>';
-    removeItem.classList.add('removeItem');
-    removeItem.addEventListener('click', function() {
+
+    const moveItem = document.createElement('button');
+    moveItem.classList.add('moveItem');
+    moveItem.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
+    moveItem.addEventListener('click', function() {
         list.removeChild(listItem);
+        addItem(item, 'purchasedList');
     });
-    listItem.appendChild(removeItem);
+
+    listItem.appendChild(moveItem);
     list.appendChild(listItem);
-
-    const strikeItem = document.createElement('button')
-    strikeItem = 
-
 }
+ 
