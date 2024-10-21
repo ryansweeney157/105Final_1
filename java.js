@@ -7,10 +7,10 @@ document.getElementById('addItem').addEventListener('click', function() {
         itemInput.value = '';
     }
 })
-
 function addItem(item) {
     const list = document.getElementById('grocery-list')
     const listItem = document.createElement('li');
+    listItem.addEventListener('click', strike);
     listItem.textContent = item;
     
     const removeItem = document.createElement('button')
@@ -21,15 +21,12 @@ function addItem(item) {
     });
     listItem.appendChild(removeItem);
     list.appendChild(listItem);
-
-    const strikeItem = document.createElement('button')
-    strikeItem = 
-
 }
 function strike() {
-    if (listItem.contains("crossout")) {
-        listItem.classList.remove("crossout");
+    let listStrike = this;
+    if (listStrike.classList.contains("crossout")) {
+        listStrike.classList.remove("crossout");
     } else {
-        listItem.classList.add("crossout");
+        listStrike.classList.add("crossout");
     }
 }
