@@ -7,7 +7,7 @@ document.getElementById('addItem').addEventListener('click', function() {
         addItem(itemValue, 'groceryList');
         itemInput.value = '';
     }
-})
+});
 
 function addItem(item, listId) {
     const list = document.getElementById(listId);
@@ -30,7 +30,7 @@ function addItem(item, listId) {
 }
  
 function strike() {
-    let listStrike = this; 
+    let listStrike = this;
     if (listStrike.classList.contains("crossout")) {
         listStrike.classList.remove("crossout");
     } else {
