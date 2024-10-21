@@ -12,6 +12,7 @@ document.getElementById('addItem').addEventListener('click', function() {
 function addItem(item, listId) {
     const list = document.getElementById(listId);
     const listItem = document.createElement('li');
+    listItem.addEventListener('click', strike);
     listItem.textContent = item;
     listItem.addEventListener('click', strike);
 
@@ -34,7 +35,7 @@ function addItem(item, listId) {
 }
  
 function strike() {
-    let listStrike = this; 
+    let listStrike = this;
     if (listStrike.classList.contains("crossout")) {
         listStrike.classList.remove("crossout");
     } else {
