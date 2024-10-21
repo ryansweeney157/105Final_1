@@ -48,3 +48,7 @@ li {
     cursor: pointer;
     color: green;
 }
+
+.crossout {
+    text-decoration: line-through;
+}
