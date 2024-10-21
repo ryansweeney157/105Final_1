@@ -21,7 +21,12 @@ function addItem(item, listId) {
     moveItem.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon>';
     moveItem.addEventListener('click', function() {
         list.removeChild(listItem);
+        if (listId === 'groceryList') {
         addItem(item, 'purchasedList');
+        }
+        else {
+            addItem(item, 'groceryList')
+        }
     });
 
     listItem.appendChild(moveItem);
