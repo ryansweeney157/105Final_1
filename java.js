@@ -13,6 +13,8 @@ function addItem(item, listId) {
     const list = document.getElementById(listId);
     const listItem = document.createElement('li');
     listItem.textContent = item;
+    listItem.addEventListener('click', strike);
+
 
     const moveItem = document.createElement('button');
     moveItem.classList.add('moveItem');
@@ -27,9 +29,10 @@ function addItem(item, listId) {
 }
  
 function strike() {
-    if (listItem.contains("crossout")) {
-        listItem.classList.remove("crossout");
+    let listStrike = this; 
+    if (listStrike.classList.contains("crossout")) {
+        listStrike.classList.remove("crossout");
     } else {
-        listItem.classList.add("crossout");
+        listStrike.classList.add("crossout");
     }
 }
